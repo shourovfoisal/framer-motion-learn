@@ -10,6 +10,10 @@ function App() {
   const [pizza, setPizza] = useState({ base: "", toppings: [] });
 
   const addBase = (base) => {
+    if(pizza.base === base) {
+      setPizza({ ...pizza, base: ""});
+      return;
+    }
     setPizza({ ...pizza, base })
   }
   
